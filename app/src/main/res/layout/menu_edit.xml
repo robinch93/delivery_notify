@@ -9,9 +9,15 @@
     <LinearLayout
         android:id="@+id/layoutTitle"
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="wrap_content"
         android:paddingTop="15dp">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:textColor="@color/colorAccent" />
 
         <TextView
             android:id="@+id/title"
@@ -21,6 +27,7 @@
             android:gravity="center_horizontal"
             android:inputType="textPersonName"
             android:text="Foodie"
+            android:paddingLeft="70dp"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
 
@@ -54,35 +61,19 @@
         android:paddingRight="20dp" >
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/nameTxtLayout"
+            android:id="@+id/titleTxtLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp">
             <EditText
-                android:id="@+id/nameTxt"
+                android:id="@+id/titleTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="50"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="name"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/emailTxtLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp">
-            <EditText
-                android:id="@+id/emailTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLength="50"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:hint="mail" />
+                android:hint="Title"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -97,24 +88,40 @@
                 android:layout_height="wrap_content"
                 android:maxLength="50"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="description" />
+                android:inputType="textEmailAddress"
+                android:hint="Description" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/addressTxtLayout"
+            android:id="@+id/priceTxtLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp">
             <EditText
-                android:id="@+id/addressTxt"
+                android:id="@+id/priceTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="50"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Price" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/quantityTxtLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp">
+            <EditText
+                android:id="@+id/quantityTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="50"
                 android:inputType="text"
                 android:ems="10"
-                android:hint="address"/>
+                android:hint="Quantity Available"/>
         </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
@@ -126,7 +133,7 @@
         android:layout_below="@+id/layoutEdit"
         android:orientation="vertical"
         android:paddingLeft="20dp"
-        android:paddingTop="15dp">
+        android:paddingTop="20dp">
 
         <Button
             android:id="@+id/saveButton"
@@ -140,3 +147,5 @@
     </LinearLayout>
 
 </RelativeLayout>
+
+
