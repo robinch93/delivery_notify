@@ -9,6 +9,7 @@
     <LinearLayout
         android:id="@+id/layoutTitle"
         android:layout_width="match_parent"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:paddingTop="15dp">
 
@@ -24,14 +25,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginRight="100dp"
             android:gravity="center_horizontal"
             android:inputType="textPersonName"
-            android:text="Foodie"
-            android:paddingLeft="70dp"
+            android:text="MENU DETAILS"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
 
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/layoutImage"

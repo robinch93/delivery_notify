@@ -9,15 +9,23 @@
     <LinearLayout
         android:id="@+id/layoutTitle"
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:paddingTop="15dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginRight="100dp"
             android:gravity="center_horizontal"
             android:inputType="textPersonName"
             android:text="Order Details"
@@ -27,14 +35,19 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layoutText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutTitle"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp">
+
+    <LinearLayout
         android:id="@+id/layoutInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:paddingLeft="20dp"
         android:orientation="vertical"
-        android:paddingRight="20dp"
         android:layout_below="@+id/layoutTitle">
 
         <TextView
@@ -71,15 +84,13 @@
 
     <LinearLayout
         android:id="@+id/layoutDetails"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:paddingLeft="20dp"
         android:layout_alignRight="@id/layoutInfo"
         android:layout_alignEnd="@id/layoutInfo"
         android:orientation="vertical"
-        android:paddingRight="20dp"
         android:layout_below="@+id/layoutTitle">
 
         <TextView
@@ -87,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:text="OrderID:" />
+            android:text="order id" />
 
         <TextView
             android:id="@+id/customerName"
@@ -96,14 +107,14 @@
             android:layout_marginTop="5dp"
             android:layout_alignParentTop="true"
 
-            android:text="Customer Name:" />
+            android:text="customer name" />
 
         <TextView
             android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Status:" />
+            android:text="status" />
 
 
         <TextView
@@ -111,36 +122,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="New" />
+            android:text="new" />
 
-
+    </LinearLayout>
     </LinearLayout>
 
     <ListView
         android:id="@+id/list"
-        android:layout_below="@+id/layoutInfo"
+        android:layout_below="@+id/layoutText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
     </ListView>
 
-    <LinearLayout
-        android:id="@+id/layoutSaveButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/list"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingTop="15dp">
 
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="SAVE"
-            android:textColor="@color/colorAccent" />
-
-    </LinearLayout>
 
 </RelativeLayout>
 
