@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:inputType="textPersonName"
+            android:text="Order Details"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:orientation="vertical"
+        android:paddingRight="20dp"
+        android:layout_below="@+id/layoutTitle">
+
+        <TextView
+            android:id="@+id/orderIDtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="OrderID:" />
+
+        <TextView
+            android:id="@+id/customerNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:text="Customer Name:" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Status:" />
+
+
+        <TextView
+            android:id="@+id/orderStatusTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="New" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:layout_alignRight="@id/layoutInfo"
+        android:layout_alignEnd="@id/layoutInfo"
+        android:orientation="vertical"
+        android:paddingRight="20dp"
+        android:layout_below="@+id/layoutTitle">
+
+        <TextView
+            android:id="@+id/orderID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="OrderID:" />
+
+        <TextView
+            android:id="@+id/customerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+
+            android:text="Customer Name:" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Status:" />
+
+
+        <TextView
+            android:id="@+id/orderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="New" />
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_below="@+id/layoutInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/layoutSaveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp">
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="SAVE"
+            android:textColor="@color/colorAccent" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+

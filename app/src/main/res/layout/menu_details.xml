@@ -12,6 +12,13 @@
         android:layout_height="wrap_content"
         android:paddingTop="15dp">
 
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
@@ -38,8 +45,8 @@
             android:id="@+id/profImgBtn"
             android:layout_width="170dp"
             android:layout_height="170dp"
-            android:src="@drawable/restraunt"
-            tools:srcCompat="@drawable/restraunt"
+            android:src="@drawable/coffee"
+            tools:srcCompat="@drawable/coffee"
             android:scaleType="fitCenter"/>
     </LinearLayout>
 
@@ -124,19 +131,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layoutEdit"
-        android:orientation="horizontal"
-        android:paddingLeft="80dp"
-        android:paddingTop="20dp">
-
-        <Button
-            android:id="@+id/backButtonButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/layoutAddress"
-            android:layout_gravity="center_horizontal"
-            android:text="BACK"
-            android:layout_marginRight="30dp"
-            android:textColor="@color/colorAccent" />
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp">
 
         <Button
             android:id="@+id/saveButton"

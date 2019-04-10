@@ -7,13 +7,39 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="100dp"
+            android:gravity="center_horizontal"
+            android:inputType="textPersonName"
+            android:text="MENU"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/list"
         android:layout_below="@+id/layoutTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
-
     </ListView>
 
     <!--
