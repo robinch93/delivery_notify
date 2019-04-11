@@ -19,8 +19,17 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:gravity="center"
             android:layout_below="@+id/layoutTitle">
+
+            <ImageButton
+                android:id="@+id/editButton"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/title"
+                android:layout_toRightOf="@+id/title"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
 
             <ImageView
                 android:id="@+id/profImgBtn"
@@ -144,6 +153,7 @@
         </LinearLayout>
 
         </ScrollView>
+
 
 
     </RelativeLayout>
