@@ -1,5 +1,12 @@
 package com.example.restaurantmanager;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,9 +19,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private ImageButton buttonEdit;
+    private static final int EditACTIVITY_REQUEST_CODE = 0;
+    public static final String Profile_data = "profile_data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +58,53 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        SharedPreferences prefs = getSharedPreferences(Profile_data, MODE_PRIVATE);
+        String restoredText = prefs.getString("nameTxt", null);
+        if (restoredText != null) {
+            String nameTxt = prefs.getString("nameTxt", "No name defined");//"No name defined" is the default value.
+            String emailTxt = prefs.getString("emailTxt", "No email defined");
+            String descriptionTxt = prefs.getString("descriptionTxt", "No description defined");
+            String addressTxt = prefs.getString("addressTxt", "No address defined");
+            TextView nameTv = (TextView)findViewById(R.id.nameTv);
+            TextView emailTv = (TextView)findViewById(R.id.emailTv);
+            TextView descriptionTv = (TextView)findViewById(R.id.descriptionTv);
+            TextView addressTv = (TextView)findViewById(R.id.addressTv);
+            nameTv.setText(nameTxt);
+            emailTv.setText(emailTxt);
+            descriptionTv.setText(descriptionTxt);
+            addressTv.setText(addressTxt);
+        }
+
+        buttonEdit = (ImageButton)findViewById(R.id.editButton);
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        // path to /data/data/yourapp/app_data/imageDir
+        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+        ImageView profImgBtn = (ImageView) findViewById(R.id.profImgBtn);
+        loadImageFromStorage(directory.toString(), profImgBtn);
+
+        buttonEdit.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), EditRestaurantAct.class);
+                ImageView profImgBtn = (ImageView) findViewById(R.id.profImgBtn);
+                TextView nameTv = (TextView)findViewById(R.id.nameTv);
+                TextView emailTv = (TextView)findViewById(R.id.emailTv);
+                TextView descriptionTv = (TextView)findViewById(R.id.descriptionTv);
+                TextView addressTv = (TextView)findViewById(R.id.addressTv);
+                intent.putExtra("nameTv", nameTv.getText().toString());
+                intent.putExtra("emailTv", emailTv.getText().toString());
+                intent.putExtra("descriptionTv", descriptionTv.getText().toString());
+                intent.putExtra("addressTv", addressTv.getText().toString());
+                ContextWrapper cw = new ContextWrapper(getApplicationContext());
+                // path to /data/data/yourapp/app_data/imageDir
+                File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+                intent.putExtra("picturePath", directory.toString());
+                startActivityForResult(intent, EditACTIVITY_REQUEST_CODE);
+
+            }
+        });
     }
 
     @Override
@@ -93,6 +158,41 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode) {
+            case (EditACTIVITY_REQUEST_CODE) : {
+                if (resultCode == Activity.RESULT_OK) {
+                    // TODO Extract the data returned from the child Activity.
+                    TextView nameTv = (TextView)findViewById(R.id.nameTv);
+                    TextView emailTv = (TextView)findViewById(R.id.emailTv);
+                    TextView descriptionTv = (TextView)findViewById(R.id.descriptionTv);
+                    TextView addressTv = (TextView)findViewById(R.id.addressTv);
+                    ImageView profImgBtn = (ImageView) findViewById(R.id.profImgBtn);
+                    nameTv.setText(data.getStringExtra("nameTxt"));
+                    emailTv.setText(data.getStringExtra("emailTxt"));
+                    descriptionTv.setText(data.getStringExtra("descriptionTxt"));
+                    addressTv.setText(data.getStringExtra("addressTxt"));
+                    loadImageFromStorage(data.getStringExtra("picturePath"), profImgBtn);
+                }
+                break;
+            }
+        }
+    }
+    private void loadImageFromStorage(String path, ImageView imageView)
+    {
+        try {
+            File f=new File(path, "profile.jpg");
+            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+            imageView.setImageBitmap(b);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
 
