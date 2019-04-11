@@ -47,8 +47,8 @@
             android:id="@+id/profImgBtn"
             android:layout_width="170dp"
             android:layout_height="170dp"
-            android:src="@drawable/coffee"
-            tools:srcCompat="@drawable/coffee"
+            android:src="@drawable/pizza"
+            tools:srcCompat="@drawable/pizza"
             android:scaleType="fitCenter"/>
     </LinearLayout>
 
