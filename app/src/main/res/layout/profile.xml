@@ -27,14 +27,12 @@
                 android:layout_marginRight="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/title"
-                android:layout_toRightOf="@+id/title"
                 app:srcCompat="@android:drawable/ic_menu_edit" />
 
             <ImageView
                 android:id="@+id/profImgBtn"
-                android:layout_width="174dp"
-                android:layout_height="171dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:src="@drawable/restraunt"
                 tools:srcCompat="@drawable/restraunt" />
         </LinearLayout>
@@ -151,7 +149,6 @@
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
-
         </ScrollView>
 
 
