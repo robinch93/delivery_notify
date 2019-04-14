@@ -37,10 +37,10 @@ public class EditRestaurantAct extends Activity {
         setContentView(R.layout.profile_edit);
         EditText nameTxt = (EditText)findViewById(R.id.nameTxt);
         EditText emailTxt = (EditText)findViewById(R.id.emailTxt);
-        EditText phoneText = (EditText)findViewById(R.id.phoneText);
+        EditText phoneText = (EditText)findViewById(R.id.phoneTxt);
         EditText descriptionTxt = (EditText)findViewById(R.id.descriptionTxt);
         EditText addressTxt = (EditText)findViewById(R.id.addressTxt);
-        EditText openhoursText = (EditText)findViewById(R.id.openhoursText);
+        EditText openhoursText = (EditText)findViewById(R.id.openhoursTxt);
         imageView = (ImageButton) findViewById(R.id.profImgBtn);
         nameTxt.setText(getIntent().getStringExtra("nameTv"));
         emailTxt.setText(getIntent().getStringExtra("emailTv"));
