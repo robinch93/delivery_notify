@@ -9,8 +9,11 @@
 
     <string name="r_name">Name</string>
     <string name="r_email">Email</string>
+    <string name="r_phone">Phone</string>
     <string name="r_description">Description</string>
     <string name="r_address">Address</string>
+    <string name="r_openhours">Opening Hours</string>
     <string name="r_price">Price</string>
     <string name="r_quantity">Available Quantity</string>
+
 </resources>

@@ -64,16 +64,22 @@ public class MainActivity extends AppCompatActivity
         if (restoredText != null) {
             String nameTxt = prefs.getString("nameTxt", "No name defined");//"No name defined" is the default value.
             String emailTxt = prefs.getString("emailTxt", "No email defined");
+            String phoneTxt = prefs.getString("phoneTxt", "No phone defined");
             String descriptionTxt = prefs.getString("descriptionTxt", "No description defined");
             String addressTxt = prefs.getString("addressTxt", "No address defined");
+            String openhoursTxt = prefs.getString("openhoursText", "No opening hours defined");
             TextView nameTv = (TextView)findViewById(R.id.nameTv);
             TextView emailTv = (TextView)findViewById(R.id.emailTv);
+            TextView phoneTv = (TextView)findViewById(R.id.phoneTv);
             TextView descriptionTv = (TextView)findViewById(R.id.descriptionTv);
             TextView addressTv = (TextView)findViewById(R.id.addressTv);
+            TextView openhoursTv = (TextView)findViewById(R.id.openhoursTv);
             nameTv.setText(nameTxt);
             emailTv.setText(emailTxt);
+            phoneTv.setText(phoneTxt);
             descriptionTv.setText(descriptionTxt);
             addressTv.setText(addressTxt);
+            openhoursTv.setText(openhoursTxt);
         }
 
         buttonEdit = (ImageButton)findViewById(R.id.editButton);
@@ -91,12 +97,16 @@ public class MainActivity extends AppCompatActivity
                 ImageView profImgBtn = (ImageView) findViewById(R.id.profImgBtn);
                 TextView nameTv = (TextView)findViewById(R.id.nameTv);
                 TextView emailTv = (TextView)findViewById(R.id.emailTv);
+                TextView phoneTv = (TextView)findViewById(R.id.phoneTv);
                 TextView descriptionTv = (TextView)findViewById(R.id.descriptionTv);
                 TextView addressTv = (TextView)findViewById(R.id.addressTv);
+                TextView openhoursTv = (TextView)findViewById(R.id.openhoursTv);
                 intent.putExtra("nameTv", nameTv.getText().toString());
                 intent.putExtra("emailTv", emailTv.getText().toString());
+                intent.putExtra("phoneTv", phoneTv.getText().toString());
                 intent.putExtra("descriptionTv", descriptionTv.getText().toString());
                 intent.putExtra("addressTv", addressTv.getText().toString());
+                intent.putExtra("openhoursTv", openhoursTv.getText().toString());
                 ContextWrapper cw = new ContextWrapper(getApplicationContext());
                 // path to /data/data/yourapp/app_data/imageDir
                 File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
@@ -169,13 +179,17 @@ public class MainActivity extends AppCompatActivity
                     // TODO Extract the data returned from the child Activity.
                     TextView nameTv = (TextView)findViewById(R.id.nameTv);
                     TextView emailTv = (TextView)findViewById(R.id.emailTv);
+                    TextView phoneTv = (TextView)findViewById(R.id.phoneTv);
                     TextView descriptionTv = (TextView)findViewById(R.id.descriptionTv);
                     TextView addressTv = (TextView)findViewById(R.id.addressTv);
+                    TextView openhoursTv = (TextView)findViewById(R.id.openhoursTv);
                     ImageView profImgBtn = (ImageView) findViewById(R.id.profImgBtn);
                     nameTv.setText(data.getStringExtra("nameTxt"));
                     emailTv.setText(data.getStringExtra("emailTxt"));
+                    phoneTv.setText(data.getStringExtra("phoneTxt"));
                     descriptionTv.setText(data.getStringExtra("descriptionTxt"));
                     addressTv.setText(data.getStringExtra("addressTxt"));
+                    openhoursTv.setText(data.getStringExtra("openhoursText"));
                     loadImageFromStorage(data.getStringExtra("picturePath"), profImgBtn);
                 }
                 break;
