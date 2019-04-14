@@ -55,6 +55,7 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_below="@+id/layoutImage"
+        android:id="@+id/layoutScroll"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
@@ -107,7 +108,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp">
             <EditText
-                android:id="@+id/phoneText"
+                android:id="@+id/phoneTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="50"
@@ -123,7 +124,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp">
             <EditText
-                android:id="@+id/descriptionText"
+                android:id="@+id/descriptionTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="50"
@@ -139,7 +140,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp">
             <EditText
-                android:id="@+id/addressText"
+                android:id="@+id/addressTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="50"
@@ -154,7 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
             <EditText
-                android:id="@+id/openhoursText"
+                android:id="@+id/openhoursTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLength="50"
@@ -177,12 +178,13 @@
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/layoutSaveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/layoutEdit"
+        android:layout_below="@+id/layoutScroll"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingTop="15dp">
@@ -198,6 +200,6 @@
 
     </LinearLayout>
 
-    </ScrollView>
+
 
 </RelativeLayout>

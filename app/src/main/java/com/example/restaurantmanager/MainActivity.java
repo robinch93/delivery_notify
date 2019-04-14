@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity
             String phoneTxt = prefs.getString("phoneTxt", "No phone defined");
             String descriptionTxt = prefs.getString("descriptionTxt", "No description defined");
             String addressTxt = prefs.getString("addressTxt", "No address defined");
-            String openhoursTxt = prefs.getString("openhoursText", "No opening hours defined");
+            String openhoursTxt = prefs.getString("openhoursTxt", "No opening hours defined");
             TextView nameTv = (TextView)findViewById(R.id.nameTv);
             TextView emailTv = (TextView)findViewById(R.id.emailTv);
             TextView phoneTv = (TextView)findViewById(R.id.phoneTv);
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity
                     phoneTv.setText(data.getStringExtra("phoneTxt"));
                     descriptionTv.setText(data.getStringExtra("descriptionTxt"));
                     addressTv.setText(data.getStringExtra("addressTxt"));
-                    openhoursTv.setText(data.getStringExtra("openhoursText"));
+                    openhoursTv.setText(data.getStringExtra("openhoursTxt"));
                     loadImageFromStorage(data.getStringExtra("picturePath"), profImgBtn);
                 }
                 break;
