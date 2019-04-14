@@ -76,10 +76,10 @@ public class MainActivity extends AppCompatActivity
             TextView openhoursTv = (TextView)findViewById(R.id.openhoursTv);
             nameTv.setText(nameTxt);
             emailTv.setText(emailTxt);
-            phoneTv.setText(emailTxt);
+            phoneTv.setText(phoneTxt);
             descriptionTv.setText(descriptionTxt);
             addressTv.setText(addressTxt);
-            openhoursTv.setText(addressTxt);
+            openhoursTv.setText(openhoursTxt);
         }
 
         buttonEdit = (ImageButton)findViewById(R.id.editButton);
@@ -103,10 +103,10 @@ public class MainActivity extends AppCompatActivity
                 TextView openhoursTv = (TextView)findViewById(R.id.openhoursTv);
                 intent.putExtra("nameTv", nameTv.getText().toString());
                 intent.putExtra("emailTv", emailTv.getText().toString());
-                intent.putExtra("phoneTv", emailTv.getText().toString());
+                intent.putExtra("phoneTv", phoneTv.getText().toString());
                 intent.putExtra("descriptionTv", descriptionTv.getText().toString());
                 intent.putExtra("addressTv", addressTv.getText().toString());
-                intent.putExtra("openhoursTv", addressTv.getText().toString());
+                intent.putExtra("openhoursTv", openhoursTv.getText().toString());
                 ContextWrapper cw = new ContextWrapper(getApplicationContext());
                 // path to /data/data/yourapp/app_data/imageDir
                 File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
