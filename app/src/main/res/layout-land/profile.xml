@@ -11,129 +11,154 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_below="@+id/layoutTitle">
 
-    <LinearLayout
-        android:id="@+id/layoutImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="25dp"
-        android:paddingLeft="25dp">
+        <LinearLayout
+            android:id="@+id/layoutImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
 
-        <ImageButton
-            android:id="@+id/profImgBtn"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:src="@drawable/restraunt"
-            tools:srcCompat="@drawable/restraunt"
-            android:scaleType="fitCenter"/>
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/editButton"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/layoutTitle"
-        android:layout_toRightOf="@+id/layoutImage"
-        android:layout_toEndOf="@+id/layoutImage"
-        android:fillViewport="true">
+            <ImageView
+                android:id="@+id/profImgBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/restraunt"
+                tools:srcCompat="@drawable/restraunt" />
+        </LinearLayout>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:stretchColumns="1">
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/layoutImage"
+            android:layout_toEndOf="@+id/layoutImage"
+            android:fillViewport="true">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
 
             <LinearLayout
-                android:id="@+id/layoutEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layoutTitle"
-                android:layout_toRightOf="@+id/layoutImage"
-                android:layout_toEndOf="@+id/layoutImage"
                 android:layout_gravity="center"
                 android:orientation="vertical"
-                android:paddingTop="10dp"
-                android:paddingLeft="30dp"
+                android:paddingLeft="20dp"
                 android:paddingRight="20dp" >
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/nameTxtLayout"
+                    android:id="@+id/nameTvLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-                    <EditText
-                        android:id="@+id/nameTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/nameTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLength="50"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:hint="name"/>
+                        android:scrollHorizontally="false"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:hint="Name"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/emailTxtLayout"
+                    android:id="@+id/emailTvLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-                    <EditText
-                        android:id="@+id/emailTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/emailTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
                         android:inputType="textEmailAddress"
-                        android:hint="email" />
+                        android:hint="Email" />
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/descriptionTxtLayout"
+                    android:id="@+id/phoneTvLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-                    <EditText
-                        android:id="@+id/descriptionTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/phoneTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLength="50"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:hint="description" />
+                        android:scrollHorizontally="false"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:hint="Phone" />
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/addressTxtLayout"
+                    android:id="@+id/descriptionTvLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-                    <EditText
-                        android:id="@+id/addressTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/descriptionTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLength="50"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:hint="address"/>
+                        android:scrollHorizontally="false"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:hint="Description"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/addressTvLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/addressTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollHorizontally="false"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:hint="Address"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/openhoursTvLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/openhoursTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollHorizontally="false"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:hint="Opening Hours"/>
                 </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
+            </TableLayout>
+        </ScrollView>
 
-            <LinearLayout
-                android:id="@+id/layoutSaveButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/layoutEdit"
-                android:orientation="vertical"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp">
 
-                <Button
-                    android:id="@+id/saveButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/layoutAddress"
-                    android:layout_gravity="center_horizontal"
-                    android:text="SAVE"
-                    android:textColor="@color/colorAccent" />
-
-            </LinearLayout>
-
-        </TableLayout>
-    </ScrollView>
 
     </RelativeLayout>
+
 </RelativeLayout>
