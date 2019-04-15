@@ -46,11 +46,11 @@
             android:paddingLeft="25dp">
 
             <ImageButton
-                android:id="@+id/profImgBtn"
+                android:id="@+id/menuImgBtn"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
-                android:src="@drawable/coffee"
-                tools:srcCompat="@drawable/coffee"
+                android:src="@drawable/pizza"
+                tools:srcCompat="@drawable/pizza"
                 android:scaleType="fitCenter"/>
         </LinearLayout>
 
