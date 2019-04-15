@@ -15,5 +15,22 @@
     <string name="r_openhours">Opening Hours</string>
     <string name="r_price">Price</string>
     <string name="r_quantity">Available Quantity</string>
+    <string name="spinner_title1">From</string>
+    <string name="spinner_title2">To</string>
+
+
+    <string name="From">From</string>
+    <string-array name="From_Array">
+        <item>9</item>
+        <item>4</item>
+        <item>6</item>
+    </string-array>
+
+    <string name="To">From</string>
+    <string-array name="To_Array">
+        <item>12</item>
+        <item>6</item>
+        <item>10</item>
+    </string-array>
 
 </resources>

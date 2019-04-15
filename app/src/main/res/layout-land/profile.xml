@@ -55,61 +55,101 @@
                 android:paddingLeft="30dp"
                 android:paddingRight="20dp" >
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/nameTxtLayout"
+                    android:id="@+id/nameTvLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-                    <EditText
-                        android:id="@+id/nameTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/nameTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLength="50"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:hint="name"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/emailTxtLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-                    <EditText
-                        android:id="@+id/emailTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
                         android:inputType="textEmailAddress"
-                        android:hint="email" />
+                        android:hint="Name" />
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/descriptionTxtLayout"
+                    android:id="@+id/emailTvLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-                    <EditText
-                        android:id="@+id/descriptionTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/emailTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLength="50"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:hint="description" />
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:inputType="textEmailAddress"
+                        android:hint="Email" />
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/addressTxtLayout"
+                    android:id="@+id/phoneTvLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
-                    <EditText
-                        android:id="@+id/addressTxt"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/phoneTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLength="50"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:hint="address"/>
+                        android:scrollHorizontally="false"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:hint="Phone" />
                 </android.support.design.widget.TextInputLayout>
-
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/descriptionTvLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/descriptionTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollHorizontally="false"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:hint="Description"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/addressTvLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/addressTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollHorizontally="false"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:hint="Address"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/openhoursTvLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/openhoursTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollHorizontally="false"
+                        android:freezesText="true"
+                        android:ems="5"
+                        android:textSize="20dp"
+                        android:hint="Opening Hours"/>
+                </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout

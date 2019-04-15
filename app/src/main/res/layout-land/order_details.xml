@@ -9,15 +9,27 @@
     <LinearLayout
         android:id="@+id/layoutTitle"
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10dp"
         android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
         android:paddingTop="15dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_weight="0.10"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginRight="100dp"
+            android:layout_weight="0.80"
             android:gravity="center_horizontal"
             android:inputType="textPersonName"
             android:text="Order Details"
