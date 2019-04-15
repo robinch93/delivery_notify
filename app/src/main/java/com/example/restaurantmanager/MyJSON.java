@@ -13,10 +13,27 @@ import java.io.IOException;
 public class MyJSON {
 
     static String fileName = "myFile.json";
+    static String[] files = {"profile","meals","orders"};
+    static String profile = "{}";
+    static String meals ="[" +
+            "{id:0,menuImg:'coffee.jpg',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:1,menuImg:'donut.jpg',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:2,menuImg:'broiled.jpg',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}" +
+            "]";
+    static String orders = "[" +
+            "{orderID:12345,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
+            "{orderID:12346,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
+            "{orderID:12346,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "'1: Chiken Biryani - 2', '2: Pasta - 1']}" +
+            "]";
 
-    public static void saveData(Context context, String mJsonResponse) {
+
+    //  0= profile, 1= meal, 2= orders
+    public static void saveData(Context context, String mJsonResponse, Integer num) {
         try {
-            FileWriter file = new FileWriter(context.getFilesDir().getPath() + "/" + fileName);
+            FileWriter file = new FileWriter(context.getFilesDir().getPath() + "/" + files[num]);
             file.write(mJsonResponse);
             file.flush();
             file.close();
@@ -25,9 +42,9 @@ public class MyJSON {
         }
     }
 
-    public static String getData(Context context) {
+    public static String getData(Context context, Integer num) {
         try {
-            File f = new File(context.getFilesDir().getPath() + "/" + fileName);
+            File f = new File(context.getFilesDir().getPath() + "/" + files[num]);
             f.createNewFile();
             //check whether file exists
             FileInputStream is = new FileInputStream(f);
@@ -35,7 +52,27 @@ public class MyJSON {
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
-            return new String(buffer);
+            String result = new String(buffer);
+            if( result.isEmpty()){
+                switch(num) {
+                    case 0:
+                        saveData(context, profile, num);
+                        result = profile;
+                        break;
+                    case 1:
+                        saveData(context, meals, num);
+                        result = meals;
+                        break;
+                    case 2:
+                        saveData(context, orders, num);
+                        result = orders;
+                        break;
+                }
+            }
+//            saveData(context, orders, num);
+//            result = orders;
+            Log.v("result", result);
+            return result;
         } catch (IOException e) {
             Log.e("TAG", "Error in Reading: " + e.getLocalizedMessage());
             return null;

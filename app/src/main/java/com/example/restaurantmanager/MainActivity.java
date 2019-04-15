@@ -164,13 +164,14 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
-            Toast.makeText(this, "Clicked item one", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Clicked item one", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gallery) {
 //            Toast.makeText(this, "Clicked item two", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getBaseContext(), com.example.restaurantmanager.Menu.class);
             startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
-            Toast.makeText(this, "Clicked item three", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getBaseContext(), Orders.class);
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
             Toast.makeText(this, "Clicked item four", Toast.LENGTH_SHORT).show();
         }

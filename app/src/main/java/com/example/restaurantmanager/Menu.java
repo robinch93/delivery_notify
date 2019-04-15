@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,13 +24,6 @@ import java.util.List;
 
 public class Menu extends AppCompatActivity {
 
-    String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry",
-            "WebOS","Ubuntu","Windows7","Max OS X"};
-    String meals = "[" +
-            "{id:0,menuImg:'coffee.jpg',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:1,menuImg:'coffee.jpg',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:2,menuImg:'coffee.jpg',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}" +
-            "]";
     private ListView listView;
     private MealAdapter mAdapter;
     ArrayList<Meal> mealsList;
@@ -41,11 +35,7 @@ public class Menu extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
-        String json = MyJSON.getData(getBaseContext());
-        if( json.isEmpty()){
-            MyJSON.saveData(getBaseContext(), meals);
-            json = meals;
-        }
+        String json = MyJSON.getData(getBaseContext(),1);
 
 //        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.menuitems_layout, mobileArray);
 //
@@ -67,6 +57,13 @@ public class Menu extends AppCompatActivity {
                 intent.putExtra("id", val.toString());
                 intent.putExtra("item", setItem);
                 startActivityForResult(intent, EditACTIVITY_REQUEST_CODE);
+            }
+        });
+        ImageButton backButton = (ImageButton)this.findViewById(R.id.btnBack);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -99,7 +96,7 @@ public class Menu extends AppCompatActivity {
                     catch (JSONException e) {
                         Log.e("MYAPP", "unexpected JSON exception", e);
                     }
-                    MyJSON.saveData(getBaseContext(), mealResult.toString());
+                    MyJSON.saveData(getBaseContext(), mealResult.toString(),1);
                     updateListView();
 //                    TextView someText = (TextView) v.findViewById(R.id.sometextview);
 //                    someText.setText("Hi! I updated you manually!");
@@ -111,7 +108,7 @@ public class Menu extends AppCompatActivity {
     public void updateListView(){
         mealsList = new ArrayList<>();
         try {
-            String json = MyJSON.getData(getBaseContext());
+            String json = MyJSON.getData(getBaseContext(),1);
             mealResult = new JSONArray(json);
             for (int i=0; i<mealResult.length(); i++) {
                 JSONObject meal = mealResult.getJSONObject(i);
@@ -129,5 +126,6 @@ public class Menu extends AppCompatActivity {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
     }
 }

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
+        <activity android:name=".Orders"></activity>
+        <activity android:name=".OrderDetail"></activity>
+
         <activity android:name=".MenuDetail"></activity>
         <activity android:name=".Menu" />
         <activity

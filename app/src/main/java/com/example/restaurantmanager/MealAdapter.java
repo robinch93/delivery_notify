@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +64,7 @@ public class MealAdapter extends ArrayAdapter<Meal> {
         try {
             ContextWrapper cw = new ContextWrapper(getContext());
             File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-            File f=new File(directory.toString(), imageName);
+            File f=new File(directory.toString(),imageName);
             Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
             imageView.setImageBitmap(b);
         }
