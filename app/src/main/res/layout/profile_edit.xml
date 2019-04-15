@@ -12,13 +12,14 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:animateLayoutChanges="true"
-        android:paddingTop="10dp">
+        android:paddingTop="5dp">
 
         <ImageButton
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.10"
+            android:layout_marginRight="20dp"
             app:srcCompat="?attr/actionModeCloseDrawable" />
 
         <TextView
@@ -28,6 +29,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginRight="100dp"
             android:layout_weight="0.80"
+            android:scaleType="fitCenter"
             android:gravity="center_horizontal"
             android:inputType="textPersonName"
             android:text="FOODIE"
@@ -40,14 +42,14 @@
         android:id="@+id/layoutImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
         android:gravity="center"
         android:layout_below="@+id/layoutTitle">
 
         <ImageButton
             android:id="@+id/profImgBtn"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/profile_image_small"
             tools:srcCompat="@drawable/profile_image_small"
             android:scaleType="fitCenter"/>
@@ -57,7 +59,7 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_below="@+id/layoutImage"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/layoutScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -93,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="0dp">
                 <EditText
                     android:id="@+id/emailTxt"
                     android:layout_width="match_parent"
@@ -109,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="0dp">
                 <EditText
                     android:id="@+id/phoneTxt"
                     android:layout_width="match_parent"
@@ -125,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="0dp">
                 <EditText
                     android:id="@+id/descriptionTxt"
                     android:layout_width="match_parent"
@@ -141,7 +143,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="0dp">
                 <EditText
                     android:id="@+id/addressTxt"
                     android:layout_width="match_parent"
