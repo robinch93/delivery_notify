@@ -24,9 +24,6 @@ import java.util.List;
 
 public class Menu extends AppCompatActivity {
 
-    String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry",
-            "WebOS","Ubuntu","Windows7","Max OS X"};
-
     private ListView listView;
     private MealAdapter mAdapter;
     ArrayList<Meal> mealsList;

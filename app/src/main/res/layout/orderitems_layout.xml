@@ -16,7 +16,7 @@
         android:text="OrderID:" />
 
     <TextView
-        android:id="@+id/odrIdTxt"
+        android:id="@+id/orderID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView"
@@ -39,7 +39,7 @@
         android:text="Customer Name:" />
 
     <TextView
-        android:id="@+id/odrCustNameTxt"
+        android:id="@+id/customerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView1"
@@ -60,7 +60,7 @@
         android:text="Lunch Time:" />
 
     <TextView
-        android:id="@+id/odrLunchTimeTxt"
+        android:id="@+id/lunchTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView2"
@@ -81,7 +81,7 @@
         android:text="Order Status:" />
 
     <TextView
-        android:id="@+id/odrStatusTxt"
+        android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView3"
@@ -101,7 +101,7 @@
         android:layout_marginTop="15dp"
         android:text="Notes:" />
     <TextView
-        android:id="@+id/odrNotesTxt"
+        android:id="@+id/notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView4"
