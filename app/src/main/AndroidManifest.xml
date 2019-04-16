@@ -30,6 +30,8 @@
         <activity
             android:name=".EditRestaurantAct"
             android:label="@string/app_name" />
+
+
     </application>
 
 </manifest>

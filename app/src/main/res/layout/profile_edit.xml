@@ -168,13 +168,15 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="0.5"
                     android:layout_height="wrap_content"
-                    android:prompt="@string/spinner_title1"/>
+                    android:prompt="@string/spinner_title1"
+                    android:spinnerMode="dropdown"/>
 
                 <Spinner
                     android:id="@+id/spinner2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
+                    android:spinnerMode="dropdown"
                     android:prompt="@string/spinner_title2"/>
 
             </LinearLayout>

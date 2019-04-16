@@ -2,8 +2,8 @@
     <string name="app_name">Foodie</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Restaurant Name</string>
-    <string name="nav_header_subtitle">restaurant_chilli@android.com</string>
+    <string name="nav_header_title">Chilli Restaurant</string>
+    <string name="nav_header_subtitle">restaurant_chilli@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -17,20 +17,5 @@
     <string name="r_quantity">Available Quantity</string>
     <string name="spinner_title1">From</string>
     <string name="spinner_title2">To</string>
-
-
-    <string name="From">From</string>
-    <string-array name="From_Array">
-        <item>9</item>
-        <item>4</item>
-        <item>6</item>
-    </string-array>
-
-    <string name="To">From</string>
-    <string-array name="To_Array">
-        <item>12</item>
-        <item>6</item>
-        <item>10</item>
-    </string-array>
 
 </resources>
