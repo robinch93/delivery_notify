@@ -15,7 +15,5 @@
     <string name="r_openhours">Opening Hours</string>
     <string name="r_price">Price</string>
     <string name="r_quantity">Available Quantity</string>
-    <string name="spinner_title1">From</string>
-    <string name="spinner_title2">To</string>
 
 </resources>

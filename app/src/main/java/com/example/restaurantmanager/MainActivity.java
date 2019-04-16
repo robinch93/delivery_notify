@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.ImageButton;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity
     private ImageButton buttonEdit;
     private static final int EditACTIVITY_REQUEST_CODE = 0;
     public static final String Profile_data = "profile_data";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
