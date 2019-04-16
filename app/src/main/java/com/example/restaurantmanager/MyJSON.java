@@ -16,17 +16,34 @@ public class MyJSON {
     static String[] files = {"profile","meals","orders"};
     static String profile = "{}";
     static String meals ="[" +
-            "{id:0,menuImg:'coffee.jpg',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:1,menuImg:'donut.jpg',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:2,menuImg:'broiled.jpg',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}" +
+            "{id:1,menuImg:'milkshake',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:2,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:3,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:4,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:5,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:6,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:7,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:8,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:9,menuImg:'hamburger',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}" +
             "]";
     static String orders = "[" +
-            "{orderID:12345,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "{orderID:1,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
             "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
-            "{orderID:12346,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "{orderID:2,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
             "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
-            "{orderID:12346,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "{orderID:3,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
+            "{orderID:4,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
+            "{orderID:5,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
+            "{orderID:6,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
+            "{orderID:7,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
+            "{orderID:8,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
             "'1: Chiken Biryani - 2', '2: Pasta - 1']}" +
+
             "]";
 
 
@@ -53,7 +70,8 @@ public class MyJSON {
             is.read(buffer);
             is.close();
             String result = new String(buffer);
-            if( result.isEmpty()){
+            if( result.isEmpty())
+            {
                 switch(num) {
                     case 0:
                         saveData(context, profile, num);
@@ -69,9 +87,6 @@ public class MyJSON {
                         break;
                 }
             }
-//            saveData(context, orders, num);
-//            result = orders;
-            Log.v("result", result);
             return result;
         } catch (IOException e) {
             Log.e("TAG", "Error in Reading: " + e.getLocalizedMessage());

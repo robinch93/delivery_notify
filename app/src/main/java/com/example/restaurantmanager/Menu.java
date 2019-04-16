@@ -37,11 +37,6 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.menu);
         String json = MyJSON.getData(getBaseContext(),1);
 
-//        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.menuitems_layout, mobileArray);
-//
-//        ListView listView = (ListView) findViewById(R.id.menuList);
-//        listView.setAdapter(adapter);
-
         listView = (ListView) findViewById(R.id.menuList);
 
         updateListView();
@@ -84,7 +79,9 @@ public class Menu extends AppCompatActivity {
                     try {
                         for (int i=0; i < mealResult.length(); i++){
                             JSONObject itemArr = (JSONObject)mealResult.get(i);
+                            Log.v("image1:82",id +": " + itemArr.get("id"));
                             if(itemArr.get("id").equals(id)){
+                                Log.v("image1:83",item.getmenuImg());
                                 itemArr.put("menuImg", item.getmenuImg());
                                 itemArr.put("menuName", item.getmenuName());
                                 itemArr.put("menuDesc", item.getmenuDesc());
@@ -114,6 +111,7 @@ public class Menu extends AppCompatActivity {
                 JSONObject meal = mealResult.getJSONObject(i);
                 Integer id = meal.getInt("id");
                 String menuImg = meal.getString("menuImg");
+                Log.v("image1",menuImg);
                 String menuName = meal.getString("menuName");
                 String menuDesc = meal.getString("menuDesc");
                 Double menuPrice = meal.getDouble("menuPrice");

@@ -55,8 +55,14 @@ public class MenuDetail extends AppCompatActivity {
         menuDescText.setText(item.getmenuDesc());
         menuPriceTxt.setText(item.getmenuPrice().toString());
         menuQtyTxt.setText(item.getmenuQty().toString());
-        imageName = item.getmenuImg().toString();
-        loadImageFromStorage(item.getmenuImg().toString(), menuImgBtn);
+        imageName = item.getmenuImg();
+        Log.v("image",imageName);
+        if(imageName.startsWith("s_")){
+            loadImageFromStorage(imageName, menuImgBtn);
+        }else{
+            int resID = getResources().getIdentifier(imageName , "drawable", getPackageName());
+            menuImgBtn.setImageResource(resID);
+        }
 
         saveBtn = (Button)findViewById(R.id.saveButton);
 
@@ -72,7 +78,7 @@ public class MenuDetail extends AppCompatActivity {
                 EditText menuDescText = (EditText)findViewById(R.id.menuDescText);
                 EditText menuPriceTxt = (EditText)findViewById(R.id.menuPriceTxt);
                 EditText menuQtyTxt = (EditText)findViewById(R.id.menuQtyTxt);
-                Meal newItem = new Meal(id, "img",menuNameTxt.getText().toString(), menuDescText.getText().toString(), Double.parseDouble(menuPriceTxt.getText().toString()), Integer.parseInt(menuQtyTxt.getText().toString()));
+                Meal newItem = new Meal(id,imageName,menuNameTxt.getText().toString(), menuDescText.getText().toString(), Double.parseDouble(menuPriceTxt.getText().toString()), Integer.parseInt(menuQtyTxt.getText().toString()));
                 resultIntent.putExtra("id",id.toString());
                 resultIntent.putExtra("item", newItem);
 //                resultIntent.putExtra("picturePath", getIntent().getStringExtra("picturePath"));
@@ -127,6 +133,7 @@ public class MenuDetail extends AppCompatActivity {
         // path to /data/data/yourapp/app_data/imageDir
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
         // Create imageDir
+        imageName = "s_" + imageName;
         File mypath=new File(directory,imageName);
         Log.v("Image",mypath.toString());
 

@@ -43,8 +43,13 @@ public class MealAdapter extends ArrayAdapter<Meal> {
         Meal currentmeal = mealsList.get(position);
 
         ImageView imageView = (ImageView)listItem.findViewById(R.id.menuImg);
-        loadImageFromStorage(currentmeal.getmenuImg(), imageView);
-
+        String mDrawableName = currentmeal.getmenuImg();
+        if(mDrawableName.startsWith("s_")){
+            loadImageFromStorage(currentmeal.getmenuImg(), imageView);
+        }else{
+            int resID = mContext.getResources().getIdentifier(mDrawableName , "drawable", mContext.getPackageName());
+            imageView.setImageResource(resID);
+        }
         TextView menuName = (TextView) listItem.findViewById(R.id.menuNameTv);
         menuName.setText(currentmeal.getmenuName());
 
