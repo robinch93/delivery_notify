@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
             String phoneTxt = prefs.getString("phoneTxt", "No phone defined");
             String descriptionTxt = prefs.getString("descriptionTxt", "No description defined");
             String addressTxt = prefs.getString("addressTxt", "No address defined");
-            String openhoursTxt = prefs.getString("openhoursTxt", "No opening hours defined");
+            String openhoursTxt = prefs.getString("openhoursTxt" , "No opening hours defined");
             TextView nameTv = (TextView)findViewById(R.id.nameTv);
             TextView emailTv = (TextView)findViewById(R.id.emailTv);
             TextView phoneTv = (TextView)findViewById(R.id.phoneTv);
@@ -174,8 +174,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
             Intent intent = new Intent(getBaseContext(), Orders.class);
             startActivity(intent);
-        } else if (id == R.id.nav_manage) {
-            Toast.makeText(this, "Clicked item four", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
