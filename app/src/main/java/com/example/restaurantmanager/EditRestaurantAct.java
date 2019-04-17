@@ -55,7 +55,6 @@ public class EditRestaurantAct extends Activity {
         phoneTxt.setText(getIntent().getStringExtra("phoneTv"));
         descriptionTxt.setText(getIntent().getStringExtra("descriptionTv"));
         addressTxt.setText(getIntent().getStringExtra("addressTv"));
-
         loadImageFromStorage(getIntent().getStringExtra("picturePath"), imageView);
 //        Bitmap bitmap = (Bitmap) getIntent().getParcelableExtra("Bitmap");
 //        imageView.setImageBitmap(bitmap);
