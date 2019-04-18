@@ -60,7 +60,7 @@ public class MyJSON {
             is.read(buffer);
             is.close();
             String result = new String(buffer);
-//            if( result.isEmpty())
+            if( result.isEmpty())
             {
                 switch(num) {
                     case 0:
