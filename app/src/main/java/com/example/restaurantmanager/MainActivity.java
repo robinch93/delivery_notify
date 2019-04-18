@@ -190,6 +190,12 @@ public class MainActivity extends AppCompatActivity
                     TextView addressTv = (TextView)findViewById(R.id.addressTv);
                     TextView openhoursTv = (TextView)findViewById(R.id.openhoursTv);
                     ImageView profImgBtn = (ImageView) findViewById(R.id.profImgBtn);
+                    nameTv .setText(data.getStringExtra("nameTxt"));
+                    emailTv .setText(data.getStringExtra("emailTxt"));
+                    phoneTv .setText(data.getStringExtra("phoneTxt"));
+                    descriptionTv .setText(data.getStringExtra("descriptionTxt"));
+                    addressTv .setText(data.getStringExtra("addressTxt"));
+                    openhoursTv .setText(data.getStringExtra("openhoursTxt"));
                     try {
                         profile.put("name", data.getStringExtra("nameTxt"));
                         profile.put("email",data.getStringExtra("emailTxt"));
