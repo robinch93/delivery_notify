@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="lightGreen">#a4c639</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="olive">#808000</color>
+    <color name="lime">#00FF00</color>
 </resources>

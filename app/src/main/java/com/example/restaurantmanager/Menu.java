@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public class Menu extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.menuList);
 
         updateListView();
+
 
         listView.setOnItemClickListener(new  AdapterView.OnItemClickListener() {
 

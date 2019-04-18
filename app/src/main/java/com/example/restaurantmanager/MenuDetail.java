@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.File;
@@ -46,6 +47,8 @@ public class MenuDetail extends AppCompatActivity {
         Meal item = (Meal)intent.getSerializableExtra("item");
         final Integer id = Integer.parseInt(intent.getStringExtra("id"));
         menuImgBtn = (ImageButton) findViewById(R.id.menuImgBtn);
+
+
         EditText menuNameTxt = (EditText)findViewById(R.id.menuNameTxt);
         EditText menuDescText = (EditText)findViewById(R.id.menuDescText);
         EditText menuPriceTxt = (EditText)findViewById(R.id.menuPriceTxt);

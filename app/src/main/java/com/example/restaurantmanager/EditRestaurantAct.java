@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -35,8 +36,7 @@ public class EditRestaurantAct extends Activity {
     private ImageButton imageView;
     private Bitmap photo;
     public static final String Profile_data = "profile_data";
-    String[] from = { "From", "9", "12", "6"};
-    String[] to = { "To", "11", "4", "10"};
+    String[] openhours = { "From - To", "9am - 11am", "12pm - 5pm", "6pm - 10pm"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +47,6 @@ public class EditRestaurantAct extends Activity {
         EditText phoneTxt = (EditText)findViewById(R.id.phoneTxt);
         EditText descriptionTxt = (EditText)findViewById(R.id.descriptionTxt);
         EditText addressTxt = (EditText)findViewById(R.id.addressTxt);
-        Spinner fromTxt = (Spinner)findViewById(R.id.spinner1);
-        Spinner toTxt = (Spinner)findViewById(R.id.spinner2);
         imageView = (ImageButton) findViewById(R.id.profImgBtn);
         nameTxt.setText(getIntent().getStringExtra("nameTv"));
         emailTxt.setText(getIntent().getStringExtra("emailTv"));
@@ -60,19 +58,13 @@ public class EditRestaurantAct extends Activity {
 //        imageView.setImageBitmap(bitmap);
         saveBtn = (Button)findViewById(R.id.saveButton);
 
+
         Spinner spin1 = (Spinner) findViewById(R.id.spinner1);
         //Creating the ArrayAdapter instance having the bank name list
-        ArrayAdapter aa1 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,from);
+        ArrayAdapter aa1 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,openhours);
         aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         spin1.setAdapter(aa1);
-
-        Spinner spin2 = (Spinner) findViewById(R.id.spinner2);
-        //Creating the ArrayAdapter instance having the bank name list
-        ArrayAdapter aa2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,to);
-        aa2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        spin2.setAdapter(aa2);
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -87,15 +79,13 @@ public class EditRestaurantAct extends Activity {
                 EditText phoneTxt = (EditText)findViewById(R.id.phoneTxt);
                 EditText descriptionTxt = (EditText)findViewById(R.id.descriptionTxt);
                 EditText addressTxt = (EditText)findViewById(R.id.addressTxt);
-                Spinner fromTxt = (Spinner)findViewById(R.id.spinner1);
-                Spinner toTxt = (Spinner)findViewById(R.id.spinner2);
+                Spinner openhoursTxt = (Spinner)findViewById(R.id.spinner1);
                 resultIntent.putExtra("nameTxt", nameTxt.getText().toString());
                 resultIntent.putExtra("emailTxt", emailTxt.getText().toString());
                 resultIntent.putExtra("phoneTxt", phoneTxt.getText().toString());
                 resultIntent.putExtra("descriptionTxt", descriptionTxt.getText().toString());
                 resultIntent.putExtra("addressTxt", addressTxt.getText().toString());
-                resultIntent.putExtra("fromTxt", fromTxt.getSelectedItem().toString());
-                resultIntent.putExtra("toTxt", toTxt.getSelectedItem().toString());
+                resultIntent.putExtra("fromTxt", openhoursTxt.getSelectedItem().toString());
                 resultIntent.putExtra("picturePath", getIntent().getStringExtra("picturePath"));
                 SharedPreferences.Editor editor = getSharedPreferences(Profile_data, MODE_PRIVATE).edit();
                 editor.putString("nameTxt", nameTxt.getText().toString());
@@ -103,8 +93,7 @@ public class EditRestaurantAct extends Activity {
                 editor.putString("phoneTxt", phoneTxt.getText().toString());
                 editor.putString("descriptionTxt", descriptionTxt.getText().toString());
                 editor.putString("addressTxt", addressTxt.getText().toString());
-                editor.putString("fromTxt", fromTxt.getSelectedItem().toString());
-                editor.putString("toTxt", toTxt.getSelectedItem().toString());
+                editor.putString("openhoursTxt", openhoursTxt.getSelectedItem().toString());
                 editor.putString("picturePath",getIntent().getStringExtra("picturePath"));
                 editor.apply();
                 setResult(Activity.RESULT_OK, resultIntent);

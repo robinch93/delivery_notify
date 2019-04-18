@@ -16,11 +16,11 @@ public class MyJSON {
     static String[] files = {"profile","meals","orders"};
     static String profile = "{}";
     static String meals ="[" +
-            "{id:1,menuImg:'milkshake',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:2,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:3,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:4,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:5,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
+            "{id:1,menuImg:'milkshake',menuName:'milkshake',menuDesc:'hot milkshake',menuPrice:10.0,menuQty:10}," +
+            "{id:2,menuImg:'blueberries',menuName:'blueberries',menuDesc:'clean blueberries',menuPrice:10.0,menuQty:10}," +
+            "{id:3,menuImg:'oranges',menuName:'juices',menuDesc:'pure orange juice',menuPrice:10.0,menuQty:10}," +
+            "{id:4,menuImg:'pizza',menuName:'pizza',menuDesc:'margerita',menuPrice:10.0,menuQty:10}," +
+            "{id:5,menuImg:'turkey',menuName:'turkey biryani',menuDesc:'rice rice',menuPrice:10.0,menuQty:10}," +
             "{id:6,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
             "{id:7,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
             "{id:8,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
