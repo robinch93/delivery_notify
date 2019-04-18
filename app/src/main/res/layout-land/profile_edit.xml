@@ -166,18 +166,21 @@
                         android:animateLayoutChanges="true"
                         android:layout_marginTop="5dp">
 
+                        <TextView
+                            android:id="@+id/openhoursTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scrollHorizontally="false"
+                            android:ems="5"
+                            android:textSize="20dp"
+                            android:hint="Open Hours"/>
+
                         <Spinner
                             android:id="@+id/spinner1"
                             android:layout_width="wrap_content"
                             android:layout_marginRight="5dp"
                             android:layout_weight="0.5"
                             android:layout_height="wrap_content" />
-
-                        <Spinner
-                            android:id="@+id/spinner2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5" />
 
                     </LinearLayout>
 

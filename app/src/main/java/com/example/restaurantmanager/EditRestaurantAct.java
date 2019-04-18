@@ -47,12 +47,14 @@ public class EditRestaurantAct extends Activity {
         EditText phoneTxt = (EditText)findViewById(R.id.phoneTxt);
         EditText descriptionTxt = (EditText)findViewById(R.id.descriptionTxt);
         EditText addressTxt = (EditText)findViewById(R.id.addressTxt);
+        Spinner openhoursTxt = (Spinner) findViewById(R.id.spinner1);
         imageView = (ImageButton) findViewById(R.id.profImgBtn);
         nameTxt.setText(getIntent().getStringExtra("nameTv"));
         emailTxt.setText(getIntent().getStringExtra("emailTv"));
         phoneTxt.setText(getIntent().getStringExtra("phoneTv"));
         descriptionTxt.setText(getIntent().getStringExtra("descriptionTv"));
         addressTxt.setText(getIntent().getStringExtra("addressTv"));
+        openhoursTxt.setSelected(true);
         loadImageFromStorage(getIntent().getStringExtra("picturePath"), imageView);
 //        Bitmap bitmap = (Bitmap) getIntent().getParcelableExtra("Bitmap");
 //        imageView.setImageBitmap(bitmap);
@@ -65,6 +67,14 @@ public class EditRestaurantAct extends Activity {
         aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         spin1.setAdapter(aa1);
+
+        ImageButton backButton = (ImageButton)this.findViewById(R.id.btnBack);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -85,7 +95,7 @@ public class EditRestaurantAct extends Activity {
                 resultIntent.putExtra("phoneTxt", phoneTxt.getText().toString());
                 resultIntent.putExtra("descriptionTxt", descriptionTxt.getText().toString());
                 resultIntent.putExtra("addressTxt", addressTxt.getText().toString());
-                resultIntent.putExtra("fromTxt", openhoursTxt.getSelectedItem().toString());
+                resultIntent.putExtra("openhoursTxt", openhoursTxt.getSelectedItem().toString());
                 resultIntent.putExtra("picturePath", getIntent().getStringExtra("picturePath"));
                 SharedPreferences.Editor editor = getSharedPreferences(Profile_data, MODE_PRIVATE).edit();
                 editor.putString("nameTxt", nameTxt.getText().toString());

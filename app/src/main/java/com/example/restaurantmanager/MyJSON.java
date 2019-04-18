@@ -21,10 +21,7 @@ public class MyJSON {
             "{id:3,menuImg:'oranges',menuName:'juices',menuDesc:'pure orange juice',menuPrice:10.0,menuQty:10}," +
             "{id:4,menuImg:'pizza',menuName:'pizza',menuDesc:'margerita',menuPrice:10.0,menuQty:10}," +
             "{id:5,menuImg:'turkey',menuName:'turkey biryani',menuDesc:'rice rice',menuPrice:10.0,menuQty:10}," +
-            "{id:6,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:7,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:8,menuImg:'blueberries',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}," +
-            "{id:9,menuImg:'hamburger',menuName:'Chiken Biryani',menuDesc:'Chiken and Rice',menuPrice:10.0,menuQty:10}" +
+            "{id:9,menuImg:'hamburger',menuName:'hamburger',menuDesc:'hot hamburger',menuPrice:10.0,menuQty:10}" +
             "]";
     static String orders = "[" +
             "{orderID:1,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
