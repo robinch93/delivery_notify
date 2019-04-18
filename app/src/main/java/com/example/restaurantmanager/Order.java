@@ -11,10 +11,10 @@ public class Order implements Serializable {
     private String notes;
     private String lunchTime;
 //    private JSONArray meals;
-    private String[] meals;
+    private String meals;
 
     // Constructor that is used to create an instance of the meal object
-    public Order(Integer orderID, String customerName, String status, String notes, String lunchTime, String[] meals) {
+    public Order(Integer orderID, String customerName, String status, String notes, String lunchTime, String meals) {
         this.orderID = orderID;
         this.customerName = customerName;
         this.status = status;
@@ -28,14 +28,14 @@ public class Order implements Serializable {
     public String getstatus(){ return status;}
     public String getnotes(){ return notes;}
     public String getlunchTime(){ return lunchTime;}
-    public String[] getorder(){ return meals;}
+    public String getmeals(){ return meals;}
 
     public void setOrderID(Integer orderID) { this.orderID = orderID;}
     public void setcustomerName(String customerName) { this.customerName = customerName;}
     public void setstatus(String status) { this.status = status;}
     public void setnotes(String notes) { this.notes = notes;}
     public void setlunchTime(String lunchTime) { this.lunchTime = lunchTime;}
-    public void setorder(String[] meals) { this.meals = meals;}
+    public void setmeals(String meals) { this.meals = meals;}
 
 
 }

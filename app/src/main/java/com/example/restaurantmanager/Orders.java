@@ -45,7 +45,7 @@ public class Orders extends AppCompatActivity {
                 Intent intent = new Intent(getBaseContext(), OrderDetail.class);
                 intent.putExtra("id", val.toString());
                 intent.putExtra("item", setItem);
-                startActivityForResult(intent, EditACTIVITY_REQUEST_CODE);
+                startActivity(intent);
             }
         });
         ImageButton backButton = (ImageButton)this.findViewById(R.id.btnBack);
@@ -57,42 +57,42 @@ public class Orders extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch(requestCode) {
-            case (EditACTIVITY_REQUEST_CODE) : {
-                if (resultCode == Activity.RESULT_OK) {
-                    // TODO Extract the data returned from the child Activity.
-                    Order item = (Order)data.getSerializableExtra("item");
-                    Integer id = Integer.parseInt(data.getStringExtra("id"));
-                    View v = listView.getChildAt(id-1);
-
-                    if(v == null)
-                        return;
-                    try {
-                        for (int i=0; i < orderResult.length(); i++){
-                            JSONObject itemArr = (JSONObject)orderResult.get(i);
-                            if(itemArr.get("orderID").equals(id)){
-                                itemArr.put("orderID", item.getOrderID());
-                                itemArr.put("customerName", item.getcustomerName());
-                                itemArr.put("status", item.getstatus());
-                                itemArr.put("notes", item.getnotes());
-                                itemArr.put("lunchTime", item.getlunchTime());
-                                itemArr.put("meals", item.getorder());
-                            }
-                        }
-                    }
-                    catch (JSONException e) {
-                        Log.e("MYAPP", "unexpected JSON exception", e);
-                    }
-                    MyJSON.saveData(getBaseContext(), orderResult.toString(),1);
-                    updateListView();
-                }
-                break;
-            }
-        }
-    }
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        switch(requestCode) {
+//            case (EditACTIVITY_REQUEST_CODE) : {
+//                if (resultCode == Activity.RESULT_OK) {
+//                    // TODO Extract the data returned from the child Activity.
+//                    Order item = (Order)data.getSerializableExtra("item");
+//                    Integer id = Integer.parseInt(data.getStringExtra("id"));
+//                    View v = listView.getChildAt(id-1);
+//
+//                    if(v == null)
+//                        return;
+//                    try {
+//                        for (int i=0; i < orderResult.length(); i++){
+//                            JSONObject itemArr = (JSONObject)orderResult.get(i);
+//                            if(itemArr.get("orderID").equals(id)){
+//                                itemArr.put("orderID", item.getOrderID());
+//                                itemArr.put("customerName", item.getcustomerName());
+//                                itemArr.put("status", item.getstatus());
+//                                itemArr.put("notes", item.getnotes());
+//                                itemArr.put("lunchTime", item.getlunchTime());
+//                                itemArr.put("meals", item.getorder());
+//                            }
+//                        }
+//                    }
+//                    catch (JSONException e) {
+//                        Log.e("MYAPP", "unexpected JSON exception", e);
+//                    }
+//                    MyJSON.saveData(getBaseContext(), orderResult.toString(),1);
+//                    updateListView();
+//                }
+//                break;
+//            }
+//        }
+//    }
     public void updateListView(){
         ordersList = new ArrayList<Order>();
         try {
@@ -105,8 +105,7 @@ public class Orders extends AppCompatActivity {
                 String status = order.getString("status");
                 String notes = order.getString("notes");
                 String lunchTime = order.getString("lunchTime");
-                JSONArray mealsArr = order.getJSONArray("meals");
-                String[] meals = {};
+                String meals = order.getString("meals");
                 ordersList.add(new Order(orderID, customerName, status, notes, lunchTime, meals));
             }
             mAdapter = new OrderAdapter(this,ordersList);

@@ -54,19 +54,24 @@ public class EditRestaurantAct extends Activity {
         phoneTxt.setText(getIntent().getStringExtra("phoneTv"));
         descriptionTxt.setText(getIntent().getStringExtra("descriptionTv"));
         addressTxt.setText(getIntent().getStringExtra("addressTv"));
-        openhoursTxt.setSelected(true);
+//        openhoursTxt.setSelected(true);
+        String compareValue = getIntent().getStringExtra("openhoursTv");
+
         loadImageFromStorage(getIntent().getStringExtra("picturePath"), imageView);
 //        Bitmap bitmap = (Bitmap) getIntent().getParcelableExtra("Bitmap");
 //        imageView.setImageBitmap(bitmap);
         saveBtn = (Button)findViewById(R.id.saveButton);
 
 
-        Spinner spin1 = (Spinner) findViewById(R.id.spinner1);
         //Creating the ArrayAdapter instance having the bank name list
         ArrayAdapter aa1 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,openhours);
         aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
-        spin1.setAdapter(aa1);
+        openhoursTxt.setAdapter(aa1);
+        if (compareValue != null) {
+            int spinnerPosition = aa1.getPosition(compareValue);
+            openhoursTxt.setSelection(spinnerPosition);
+        }
 
         ImageButton backButton = (ImageButton)this.findViewById(R.id.btnBack);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -97,15 +102,6 @@ public class EditRestaurantAct extends Activity {
                 resultIntent.putExtra("addressTxt", addressTxt.getText().toString());
                 resultIntent.putExtra("openhoursTxt", openhoursTxt.getSelectedItem().toString());
                 resultIntent.putExtra("picturePath", getIntent().getStringExtra("picturePath"));
-                SharedPreferences.Editor editor = getSharedPreferences(Profile_data, MODE_PRIVATE).edit();
-                editor.putString("nameTxt", nameTxt.getText().toString());
-                editor.putString("emailTxt", emailTxt.getText().toString());
-                editor.putString("phoneTxt", phoneTxt.getText().toString());
-                editor.putString("descriptionTxt", descriptionTxt.getText().toString());
-                editor.putString("addressTxt", addressTxt.getText().toString());
-                editor.putString("openhoursTxt", openhoursTxt.getSelectedItem().toString());
-                editor.putString("picturePath",getIntent().getStringExtra("picturePath"));
-                editor.apply();
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
 

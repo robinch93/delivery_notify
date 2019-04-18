@@ -14,7 +14,8 @@ public class MyJSON {
 
     static String fileName = "myFile.json";
     static String[] files = {"profile","meals","orders"};
-    static String profile = "{}";
+    static String profile = "{name:'Happy Meal', email: 'hm@gmail.com', description: 'Food and chips.', phone:'3411223344', address:'via Android 123 Centro'," +
+            "openhours: '12pm - 5pm'  }";
     static String meals ="[" +
             "{id:1,menuImg:'milkshake',menuName:'milkshake',menuDesc:'hot milkshake',menuPrice:10.0,menuQty:10}," +
             "{id:2,menuImg:'blueberries',menuName:'blueberries',menuDesc:'clean blueberries',menuPrice:10.0,menuQty:10}," +
@@ -25,22 +26,14 @@ public class MyJSON {
             "]";
     static String orders = "[" +
             "{orderID:1,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
-            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
-            "{orderID:2,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
-            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
-            "{orderID:3,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
-            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
-            "{orderID:4,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
-            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
-            "{orderID:5,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
-            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
-            "{orderID:6,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
-            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
-            "{orderID:7,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
-            "'1: Chiken Biryani - 2', '2: Pasta - 1']}," +
-            "{orderID:8,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
-            "'1: Chiken Biryani - 2', '2: Pasta - 1']}" +
-
+            "{id:1,menuImg:'milkshake',menuName:'milkshake',menuDesc:'hot milkshake',menuPrice:10.0,menuQty:10}," +
+            "{id:3,menuImg:'oranges',menuName:'juices',menuDesc:'pure orange juice',menuPrice:10.0,menuQty:10}]}," +
+            "{orderID:1,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "{id:1,menuImg:'milkshake',menuName:'milkshake',menuDesc:'hot milkshake',menuPrice:10.0,menuQty:10}," +
+            "{id:3,menuImg:'oranges',menuName:'juices',menuDesc:'pure orange juice',menuPrice:10.0,menuQty:10}]}," +
+            "{orderID:1,customerName:'Panther',status:0,lunchTime:'10:00',notes:'Add extra chips', meals:[" +
+            "{id:1,menuImg:'milkshake',menuName:'milkshake',menuDesc:'hot milkshake',menuPrice:10.0,menuQty:10}," +
+            "{id:3,menuImg:'oranges',menuName:'juices',menuDesc:'pure orange juice',menuPrice:10.0,menuQty:10}]}" +
             "]";
 
 
@@ -67,7 +60,7 @@ public class MyJSON {
             is.read(buffer);
             is.close();
             String result = new String(buffer);
-            if( result.isEmpty())
+//            if( result.isEmpty())
             {
                 switch(num) {
                     case 0:

@@ -27,6 +27,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ArrayAdapter;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity
     private ImageButton buttonEdit;
     private static final int EditACTIVITY_REQUEST_CODE = 0;
     public static final String Profile_data = "profile_data";
+    private JSONObject profile;
 
 
     @Override
@@ -45,15 +50,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -68,28 +64,27 @@ public class MainActivity extends AppCompatActivity
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         relativeLayout.setBackgroundColor(getResources().getColor(R.color.lightGreen));
 
-        SharedPreferences prefs = getSharedPreferences(Profile_data, MODE_PRIVATE);
-        String restoredText = prefs.getString("nameTxt", null);
-        if (restoredText != null) {
-            String nameTxt = prefs.getString("nameTxt", "No name defined");//"No name defined" is the default value.
-            String emailTxt = prefs.getString("emailTxt", "No email defined");
-            String phoneTxt = prefs.getString("phoneTxt", "No phone defined");
-            String descriptionTxt = prefs.getString("descriptionTxt", "No description defined");
-            String addressTxt = prefs.getString("addressTxt", "No address defined");
-            String openhoursTxt = prefs.getString("openhoursTxt" , "No opening hours defined");
+        String json = MyJSON.getData(getBaseContext(),0);
+        try{
+            profile = new JSONObject(json);
             TextView nameTv = (TextView)findViewById(R.id.nameTv);
             TextView emailTv = (TextView)findViewById(R.id.emailTv);
             TextView phoneTv = (TextView)findViewById(R.id.phoneTv);
             TextView descriptionTv = (TextView)findViewById(R.id.descriptionTv);
             TextView addressTv = (TextView)findViewById(R.id.addressTv);
             TextView openhoursTv = (TextView)findViewById(R.id.openhoursTv);
-            nameTv.setText(nameTxt);
-            emailTv.setText(emailTxt);
-            phoneTv.setText(phoneTxt);
-            descriptionTv.setText(descriptionTxt);
-            addressTv.setText(addressTxt);
-            openhoursTv.setText(openhoursTxt);
+            nameTv.setText(profile.getString("name"));
+            emailTv.setText(profile.getString("email"));
+            phoneTv.setText(profile.getString("phone"));
+            descriptionTv.setText(profile.getString("description"));
+            addressTv.setText(profile.getString("address"));
+            openhoursTv.setText(profile.getString("openhours"));
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
+
+
 
         buttonEdit = (ImageButton)findViewById(R.id.editButton);
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
@@ -195,13 +190,19 @@ public class MainActivity extends AppCompatActivity
                     TextView addressTv = (TextView)findViewById(R.id.addressTv);
                     TextView openhoursTv = (TextView)findViewById(R.id.openhoursTv);
                     ImageView profImgBtn = (ImageView) findViewById(R.id.profImgBtn);
-                    nameTv.setText(data.getStringExtra("nameTxt"));
-                    emailTv.setText(data.getStringExtra("emailTxt"));
-                    phoneTv.setText(data.getStringExtra("phoneTxt"));
-                    descriptionTv.setText(data.getStringExtra("descriptionTxt"));
-                    addressTv.setText(data.getStringExtra("addressTxt"));
-                    openhoursTv.setText(data.getStringExtra("openhoursTxt"));
-                    loadImageFromStorage(data.getStringExtra("picturePath"), profImgBtn);
+                    try {
+                        profile.put("name", data.getStringExtra("nameTxt"));
+                        profile.put("email",data.getStringExtra("emailTxt"));
+                        profile.put("phone",data.getStringExtra("phoneTxt"));
+                        profile.put("description",data.getStringExtra("descriptionTxt"));
+                        profile.put("address",data.getStringExtra("addressTxt"));
+                        profile.put("openhour",data.getStringExtra("openhoursTxt"));
+                        loadImageFromStorage(data.getStringExtra("picturePath"), profImgBtn);
+                    } catch (JSONException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    MyJSON.saveData(getBaseContext(), profile.toString(),0);
                 }
                 break;
             }

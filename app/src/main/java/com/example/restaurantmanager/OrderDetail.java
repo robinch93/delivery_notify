@@ -17,36 +17,38 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class OrderDetail extends AppCompatActivity {
 
-    private Button saveBtn;
-    private static final int CAMERA_REQUEST = 1888;
-    private static final int MY_CAMERA_PERMISSION_CODE = 100;
-    private static final int PICK_PHOTO_FOR_AVATAR = 1;
-    private ImageButton menuImgBtn;
-    private String imageName;
-    private Bitmap photo;
+
+    private ListView listView;
+    private MealAdapter mAdapter;
+    ArrayList<Meal> mealsList;
+    private String  mealResultString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_details);
+
         Intent intent = getIntent();
         Order item = (Order)intent.getSerializableExtra("item");
         final Integer id = Integer.parseInt(intent.getStringExtra("id"));
-        menuImgBtn = (ImageButton) findViewById(R.id.menuImgBtn);
         TextView orderID = (TextView)findViewById(R.id.orderID);
         TextView customerName = (TextView)findViewById(R.id.customerName);
         TextView status = (TextView)findViewById(R.id.status);
@@ -54,6 +56,13 @@ public class OrderDetail extends AppCompatActivity {
         orderID.setText(item.getOrderID().toString());
         customerName.setText(item.getcustomerName());
         status.setText(item.getstatus().toString());
+        mealResultString = item.getmeals();
+
+        listView = (ListView) findViewById(R.id.list);
+
+        updateListView();
+
+
 
         ImageButton backButton = (ImageButton)this.findViewById(R.id.btnBack);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -62,5 +71,28 @@ public class OrderDetail extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void updateListView(){
+        mealsList = new ArrayList<>();
+        try {
+            JSONArray  mealResult = new JSONArray(mealResultString);
+            for (int i=0; i<mealResult.length(); i++) {
+                JSONObject meal = mealResult.getJSONObject(i);
+                Integer id = meal.getInt("id");
+                String menuImg = meal.getString("menuImg");
+                String menuName = meal.getString("menuName");
+                String menuDesc = meal.getString("menuDesc");
+                Double menuPrice = meal.getDouble("menuPrice");
+                Integer menuQty = meal.getInt("menuQty");
+                mealsList.add(new Meal(id, menuImg, menuName, menuDesc, menuPrice, menuQty));
+            }
+            mAdapter = new MealAdapter(this,mealsList);
+            listView.setAdapter(mAdapter);
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
     }
 }
