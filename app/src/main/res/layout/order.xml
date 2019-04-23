@@ -31,12 +31,11 @@
             android:gravity="center_horizontal"
             android:layout_weight="0.80"
             android:inputType="textPersonName"
-            android:text="Order Info"
+            android:text="Orders"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
 
     </LinearLayout>
-
 
     <ListView
         android:id="@+id/orderList"

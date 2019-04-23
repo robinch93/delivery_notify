@@ -1,22 +1,14 @@
 package com.example.restaurantmanager;
 
 import android.content.Context;
-import android.content.ContextWrapper;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +36,7 @@ public class OrderAdapter extends ArrayAdapter<Order> {
         TextView orderID = (TextView) listItem.findViewById(R.id.orderID);
         orderID.setText(currentorder.getOrderID().toString());
 
-        TextView customerName = (TextView) listItem.findViewById(R.id.customerName);
+        TextView customerName = (TextView) listItem.findViewById(R.id.restaurantName);
         customerName.setText(currentorder.getcustomerName());
 
         TextView status = (TextView) listItem.findViewById(R.id.status);

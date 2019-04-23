@@ -18,7 +18,7 @@
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="0.10"
             app:srcCompat="?attr/actionModeCloseDrawable" />
 
@@ -31,7 +31,7 @@
             android:layout_weight="0.80"
             android:gravity="center_horizontal"
             android:inputType="textPersonName"
-            android:text="MENU DETAILS"
+            android:text="DELIVERY DETAILS"
             android:textSize="30sp"
             android:textStyle="bold|italic" />
 
@@ -136,7 +136,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layoutEdit"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
         android:paddingLeft="20dp"
         android:paddingTop="15dp">
 
@@ -144,10 +145,19 @@
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/layoutAddress"
             android:layout_gravity="center_horizontal"
-            android:text="SAVE"
+            android:text="CANCEL"
+            android:layout_marginRight="20dp"
             android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/completedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="DELIVERED"
+            android:textColor="@color/colorAccent" />
+
 
     </LinearLayout>
 

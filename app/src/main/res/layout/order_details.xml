@@ -61,12 +61,36 @@
             android:text="OrderID:" />
 
         <TextView
+            android:id="@+id/restaurantNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:text="Restaurant Name:" />
+
+        <TextView
+            android:id="@+id/restaurantAddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:text="Restaurant Address:" />
+
+        <TextView
             android:id="@+id/customerNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_alignParentTop="true"
             android:text="Customer Name:" />
+
+        <TextView
+            android:id="@+id/customerAddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:text="Customer Address:" />
 
         <TextView
             android:id="@+id/statusText"
@@ -104,13 +128,36 @@
             android:text="meals id" />
 
         <TextView
+            android:id="@+id/restaurantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:text="restaurant name" />
+
+        <TextView
+            android:id="@+id/restaurantAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:text="restaurant address" />
+
+        <TextView
             android:id="@+id/customerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_alignParentTop="true"
-
             android:text="customer name" />
+
+        <TextView
+            android:id="@+id/customerAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:text="customer address" />
 
         <TextView
             android:id="@+id/status"
@@ -129,12 +176,6 @@
 
     </LinearLayout>
     </LinearLayout>
-    <ListView
-        android:id="@+id/list"
-        android:layout_below="@+id/layoutText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-    </ListView>
 
 </RelativeLayout>
 
