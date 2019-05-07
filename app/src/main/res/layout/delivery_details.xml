@@ -78,7 +78,7 @@
                 android:maxLength="50"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="Title"/>
+                android:hint="Order ID"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -94,7 +94,7 @@
                 android:maxLength="50"
                 android:ems="10"
                 android:inputType="textEmailAddress"
-                android:hint="Description" />
+                android:hint="Customer Address" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -110,7 +110,7 @@
                 android:maxLength="50"
                 android:ems="10"
                 android:inputType="text"
-                android:hint="Price" />
+                android:hint="Amount" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -126,7 +126,7 @@
                 android:maxLength="50"
                 android:inputType="text"
                 android:ems="10"
-                android:hint="Quantity Available"/>
+                android:hint="Quantity Delivered"/>
         </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>

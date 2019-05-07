@@ -24,37 +24,27 @@
         android:layout_toEndOf="@+id/menuImg"
         android:layout_toRightOf="@+id/menuImg"
         android:textColorHighlight="@color/design_default_color_primary"
-        android:text="Title" />
+        android:text="Order Id" />
 
     <TextView
-        android:id="@+id/menuDescTv"
+        android:id="@+id/menuFromTv"
         android:layout_width="300dp"
         android:layout_height="25dp"
         android:layout_alignStart="@+id/menuNameTv"
         android:layout_alignLeft="@+id/menuNameTv"
         android:layout_below="@+id/menuNameTv"
         android:layout_marginTop="15dp"
-        android:text="Description" />
+        android:text="From" />
 
     <TextView
-        android:id="@+id/menuPriceTv"
-        android:layout_width="70dp"
+        android:id="@+id/menuToTv"
+        android:layout_width="300dp"
         android:layout_height="25dp"
-        android:layout_alignBottom="@+id/menuImg"
-        android:layout_alignStart="@+id/menuDescTv"
-        android:layout_alignLeft="@+id/menuDescTv"
-        android:text="Price" />
+        android:layout_alignStart="@+id/menuNameTv"
+        android:layout_alignLeft="@+id/menuNameTv"
+        android:layout_below="@+id/menuFromTv"
+        android:layout_marginTop="15dp"
+        android:text="To" />
 
-    <TextView
-        android:id="@+id/menuQtyTv"
-        android:layout_width="70dp"
-        android:layout_height="25dp"
-        android:layout_alignBaseline="@+id/menuPriceTv"
-        android:layout_alignBottom="@+id/menuPriceTv"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_toEndOf="@+id/menuPriceTv"
-        android:layout_toRightOf="@+id/menuPriceTv"
-        android:text="Quantity" />
 </RelativeLayout>
 

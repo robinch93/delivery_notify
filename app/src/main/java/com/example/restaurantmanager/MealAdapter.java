@@ -53,14 +53,11 @@ public class MealAdapter extends ArrayAdapter<Meal> {
         TextView menuName = (TextView) listItem.findViewById(R.id.menuNameTv);
         menuName.setText(currentmeal.getmenuName());
 
-        TextView menuDesc = (TextView) listItem.findViewById(R.id.menuDescTv);
-        menuDesc.setText(currentmeal.getmenuDesc());
+        TextView menuFrom = (TextView) listItem.findViewById(R.id.menuFromTv);
+        menuFrom.setText(currentmeal.getmenuDesc());
 
-        TextView menuPrice = (TextView) listItem.findViewById(R.id.menuPriceTv);
-        menuPrice.setText(currentmeal.getmenuPrice().toString());
-
-        TextView menuQty = (TextView) listItem.findViewById(R.id.menuQtyTv);
-        menuQty.setText(currentmeal.getmenuQty().toString());
+        TextView menuTo = (TextView) listItem.findViewById(R.id.menuToTv);
+        menuTo.setText(currentmeal.getmenuDesc());
 
         return listItem;
     }
